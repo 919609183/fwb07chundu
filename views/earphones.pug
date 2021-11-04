@@ -1,27 +1,25 @@
 extends layout
 
 block content
-  div(class="container-fluid")
     h1= title
-  - let results=[{name:"parker",type:"handmade",cost:129},{name:"reynolds",type:"fountain",cost:57.39},{name:"montex",type:"ball pen",cost:39.99}] 
+    div(class="container-fluid")
+    h1= title
+  - let results=[{brand:"oneplus",model:"zplus",price:99.99},{brand:"samsung",model:"galaxy",price:149.99},{make:"sony",model:"MDREX",price:.119}] 
     div(class="row")
       each form,index in results
-        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.name}
+        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.brand}
         br
         br
         br
-        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.type}
+        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.model}
         br
         br
         br
-        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.cost}
+        div(class = "col-sm-2 bg-primary" onclick=`buy(${index})`) #{form.price}
     script.
      
       function buy(itemNo)
       {
         alert(`You purchased Item ${itemNo+1}`)
       }
- 
-
-
   
